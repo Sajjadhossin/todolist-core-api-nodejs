@@ -1,8 +1,14 @@
+require('dotenv').config();
 const express = require('express')
 const app = express()
+const mongoose = require('mongoose');
+const dbConnection = require("./helper/dbConnection");
+const registrationController = require('./controller/registrationController');
 
-app.get('/test', function (req, res) {
-  res.send('Hello World')
-})
+// call dbConnection to test connection
+dbConnection();
+app.use(express.json());
+
+app.post('/registration', registrationController);
 
 app.listen(8000)

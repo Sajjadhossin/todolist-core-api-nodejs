@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const dbConnection = require("./helper/dbConnection");
 const registrationController = require('./controller/registrationController');
 
-// call dbConnection to test connection
+// call dbConnection to test connection with db
 dbConnection();
 app.use(express.json());
 

@@ -31,9 +31,6 @@ let registrationController = async(req, res)=> {
             userName: user.userName
         });
     })
-
-
-
 }
 
 module.exports = registrationController;

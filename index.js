@@ -9,6 +9,8 @@ const todoController = require('./controller/todoController');
 const multer  = require('multer')
 const path = require('path');
 const getAllTodoController = require('./controller/getAllTodoController');
+const todoEditController = require('./controller/todoEditController');
+const todoDeleteController = require('./controller/todoDeleteController');
 
 // call dbConnection to test connection with db
 dbConnection();
@@ -35,6 +37,9 @@ const upload = multer({ storage: storage })
 app.post('/registration', registrationController);
 app.post('/login', loginController);
 app.post('/createTask', upload.single('avatar'), todoController);
+app.delete('/deleteTask/:id', todoDeleteController );
+app.post('/editTask', todoEditController);
 app.get('/allTask', getAllTodoController);
+
 
 app.listen(8000)

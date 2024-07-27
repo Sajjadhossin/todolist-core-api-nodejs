@@ -26,7 +26,7 @@ let registrationController = async(req, res)=> {
         });
         user.save();
         res.send({
-            message: "Registration successfully done",
+            message: `Hello ${userName}, your registration is successfully done.`,
             id: user._id,
             userName: user.userName
         });
